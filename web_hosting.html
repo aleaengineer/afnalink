@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AFNALINK - Internet & Hosting Terbaik</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="manifest" href="assets/site.webmanifest">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        :root {
+            --primary-dark: #0a192f;
+            --primary-blue: #172a45;
+            --accent-yellow: #ffd700;
+            --text-white: #f8f9fa;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #000;
+            color: var(--text-white);
+        }
+        
+        .navbar {
+            background-color: var(--primary-dark) !important;
+            border-bottom: 2px solid var(--accent-yellow);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--accent-yellow) !important;
+            font-size: 1.8rem;
+        }
+        
+        .nav-link {
+            color: var(--text-white) !important;
+            font-weight: 500;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--accent-yellow) !important;
+            transform: translateY(-2px);
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        
+        .hero-content {
+            z-index: 2;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--accent-yellow);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+        
+        .btn-primary-custom {
+            background-color: var(--accent-yellow);
+            color: #000;
+            font-weight: 600;
+            padding: 12px 30px;
+            border-radius: 30px;
+            border: none;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary-custom:hover {
+            background-color: #ffc107;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 215, 0, 0.3);
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 50px;
+            color: var(--accent-yellow);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            background-color: var(--accent-yellow);
+            bottom: -10px;
+            left: 0;
+        }
+
+        .contact-section {
+            background-color: var(--primary-dark);
+            padding: 80px 0;
+        }
+        
+        .contact-info {
+            margin-bottom: 30px;
+        }
+        
+        .contact-icon {
+            font-size: 2rem;
+            color: var(--accent-yellow);
+            margin-bottom: 15px;
+        }
+        
+        .footer {
+            background-color: #000;
+            padding: 30px 0;
+            border-top: 1px solid var(--primary-blue);
+        }
+        
+        .social-icons a {
+            color: var(--text-white);
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            color: var(--accent-yellow);
+            transform: translateY(-3px);
+        }
+        
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: pulse 2s infinite;
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            transform: scale(1.1);
+            animation: none;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+        
+        /* Hosting Packages Table */
+        .hosting-section {
+            background-color: var(--primary-dark);
+            padding: 80px 0;
+        }
+        
+        .hosting-table {
+            background-color: var(--primary-blue);
+            color: #FFF;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hosting-table th {
+            background-color: var(--accent-yellow);
+            color: #000000;
+            font-weight: 700;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .hosting-table td {
+            padding: 15px 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+        
+        .hosting-table tr:last-child td {
+            border-bottom: none;
+            color: #fff;
+        }
+        
+        .hosting-table .package-title {
+            font-weight: 700;
+            color: var(--accent-yellow);
+            font-size: 1.2rem;
+        }
+        
+        .hosting-table .price {
+            font-weight: 700;
+            color: var(--accent-yellow);
+            font-size: 1.5rem;
+        }
+        
+        .hosting-table .period {
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+        
+        .hosting-table .feature-icon {
+            color: var(--accent-yellow);
+        }
+        
+        .hosting-table .btn-order {
+            background-color: var(--accent-yellow);
+            color: #000000;
+            font-weight: 600;
+            padding: 8px 20px;
+            border-radius: 20px;
+            border: none;
+            transition: all 0.3s ease;
+        }
+        
+        .hosting-table .btn-order:hover {
+            background-color: #ffc107;
+            transform: translateY(-3px);
+        }
+        
+        /* Animations */
+        .fade-in {
+            animation: fadeIn 1.5s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .slide-in-left {
+            animation: slideInLeft 1s ease-out;
+        }
+        
+        @keyframes slideInLeft {
+            from { transform: translateX(-100px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        .slide-in-right {
+            animation: slideInRight 1s ease-out;
+        }
+        
+        @keyframes slideInRight {
+            from { transform: translateX(100px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand animate__animated animate__fadeInLeft" href="index.html">
+                <i class="fas fa-wifi me-2"></i>AFNALINK
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto animate__animated animate__fadeInRight">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#hosting">Hosting</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tentang">Tentang Kami</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#kontak">Kontak</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 hero-content">
+                    <h1 class="hero-title animate__animated animate__fadeInDown">Internet & Hosting Terbaik</h1>
+                    <p class="hero-subtitle animate__animated animate__fadeInUp animate__delay-1s">Solusi lengkap untuk kebutuhan internet dan hosting website bisnis Anda</p>
+                    <a href="#hosting" class="btn btn-primary-custom animate__animated animate__fadeInUp animate__delay-2s">Lihat Paket</a>
+                </div>
+                <div class="col-lg-6 animate__animated animate__fadeIn animate__delay-1s">
+                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Internet Service" class="img-fluid rounded-3 d-none d-lg-block">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hosting Section -->
+    <section class="hosting-section py-5" id="hosting">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title animate__animated animate__fadeIn">Paket Hosting</h2>
+                <p class="lead animate__animated animate__fadeIn animate__delay-1s">Solusi hosting terbaik untuk website Anda</p>
+            </div>
+            
+            <div class="hosting-table animate__animated animate__fadeInUp">
+                <table class="table table-borderless">
+                    <thead>
+                        <tr>
+                            <th>Fitur</th>
+                            <th>AFNA Basic</th>
+                            <th>AFNA Advanced</th>
+                            <th>AFNA Professional</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-white">
+                        <tr>
+                            <td class="text-start">Disk Space</td>
+                            <td>10GB</td>
+                            <td>50GB</td>
+                            <td>100GB</td>
+                        </tr>
+                        <tr>
+                            <td class="text-start">Data Transfer</td>
+                            <td>Unlimited</td>
+                            <td>Unlimited</td>
+                            <td>Unlimited</td>
+                        </tr>
+                        <tr>
+                            <td class="text-start">Free Domain</td>
+                            <td><i class="fas fa-times feature-icon"></i></td>
+                            <td><i class="fas fa-times feature-icon"></i></td>
+                            <td><i class="fas fa-check feature-icon"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="text-start">Free Website</td>
+                            <td><i class="fas fa-times feature-icon"></i></td>
+                            <td><i class="fas fa-check feature-icon"></i></td>
+                            <td><i class="fas fa-check feature-icon"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="text-start">Free Emails</td>
+                            <td><i class="fas fa-times feature-icon"></i></td></td>
+                            <td>5 Emails</td>
+                            <td>Unlimited</td>
+                        </tr>
+                        <tr>
+                            <td class="text-start">Free Mail Support</td>
+                            <td><i class="fas fa-check feature-icon"></i></td>
+                            <td><i class="fas fa-check feature-icon"></i></td>
+                            <td>Unlimited</i></td>
+                        </tr>
+                        <tr>
+                            <td class="text-start">Free Call Support</td>
+                            <td>1 Times</td>
+                            <td>2 Times</td>
+                            <td>Unlimited</td>
+                        </tr>
+                        <tr>
+                            <td class="text-start">Free Website</td>
+                            <td><i class="fas fa-times feature-icon"></i></td>
+                            <td><i class="fas fa-check feature-icon"></i></td>
+                            <td><i class="fas fa-check feature-icon"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="text-start">Harga</td>
+                            <td>
+                                <div class="price">Rp99.000</div>
+                                <div class="period">PER MONTH</div>
+                            </td>
+                            <td>
+                                <div class="price">Rp199.000</div>
+                                <div class="period">PER MONTH</div>
+                            </td>
+                            <td>
+                                <div class="price">Rp299.000</div>
+                                <div class="period">PER MONTH</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><a href="https://wa.me/6282112340343?text=Saya%20tertarik%20dengan%20paket%20Hosting%20Basic" target="_blank" class="btn btn-order">Pesan</a></td>
+                            <td><a href="https://wa.me/6282112340343?text=Saya%20tertarik%20dengan%20paket%20Hosting%20Advanced" target="_blank" class="btn btn-order">Pesan</a></td>
+                            <td><a href="https://wa.me/6282112340343?text=Saya%20tertarik%20dengan%20paket%20Hosting%20Professional" target="_blank" class="btn btn-order">Pesan</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-5 bg-dark" id="tentang">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="About AFNALINK" class="img-fluid rounded-3 animate__animated animate__fadeInLeft">
+                </div>
+                <div class="col-lg-6 animate__animated animate__fadeInRight">
+                    <h2 class="section-title">Tentang Kami</h2>
+                    <p>PT. AFNA DIGITAL INDONESIA (AFNALINK) adalah penyedia layanan internet berbasis fiber optic dan hosting yang berkomitmen untuk memberikan koneksi terbaik kepada pelanggan.</p>
+                    <p>Dengan jaringan yang luas dan teknologi terkini, kami menjamin koneksi yang stabil dan cepat untuk semua kebutuhan digital Anda, mulai dari browsing, streaming, hingga hosting website bisnis.</p>
+                    <div class="row mt-4">
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex align-items-center">
+                                <div class="me-3 text-warning">
+                                    <i class="fas fa-bolt fa-2x"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-0">Koneksi Stabil</h5>
+                                    <small>Uptime 99.9%</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex align-items-center">
+                                <div class="me-3 text-warning">
+                                    <i class="fas fa-headset fa-2x"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-0">Support 24/7</h5>
+                                    <small>Tim profesional siap membantu</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex align-items-center">
+                                <div class="me-3 text-warning">
+                                    <i class="fas fa-tachometer-alt fa-2x"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-0">Kecepatan Optimal</h5>
+                                    <small>Tanpa throttling</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex align-items-center">
+                                <div class="me-3 text-warning">
+                                    <i class="fas fa-shield-alt fa-2x"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-0">Keamanan</h5>
+                                    <small>Proteksi jaringan terbaik</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="kontak">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title animate__animated animate__fadeIn">Hubungi Kami</h2>
+                <p class="lead animate__animated animate__fadeIn animate__delay-1s">Kami siap membantu Anda 24 jam sehari</p>
+            </div>
+            <div class="row">
+                <div class="col-md-4 text-center mb-5 mb-md-0">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h4>Telepon</h4>
+                    <p>0821-1234-0343</p>
+                </div>
+                <div class="col-md-4 text-center mb-5 mb-md-0">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h4>Email</h4>
+                    <p>kontak@afna.link</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h4>Alamat</h4>
+                    <p>Dusun Ciokong RT 03 RW 01, Desa Sukaresik, Kec. Sidamulih, Kab. Pangandaran, Jawa Barat 46365</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <h3 class="text-warning mb-3"><i class="fas fa-wifi me-2"></i>AFNALINK</h3>
+                    <p>PT. AFNA DIGITAL INDONESIA - Penyedia layanan internet dan hosting terpercaya dengan jaringan fiber optic terbaik di Indonesia.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="social-icons mb-3">
+                        <a href="https://facebook.com/" class="animate__animated animate__fadeIn animate__delay-1s"><i class="fab fa-facebook"></i></a>
+                        <a href="https://x.com/" class="animate__animated animate__fadeIn animate__delay-2s"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com/" class="animate__animated animate__fadeIn animate__delay-3s"><i class="fab fa-instagram"></i></a>
+                        <a href="https://linkedin.com/" class="animate__animated animate__fadeIn animate__delay-4s"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                    <p>&copy; 2023 PT. AFNA.LINK. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/6282112340343" target="_blank" class="whatsapp-float animate__animated animate__bounceIn animate__delay-3s" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Bootstrap 5 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Animation on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const animateElements = document.querySelectorAll('.animate__animated');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const animation = entry.target.getAttribute('data-animation');
+                        entry.target.classList.add('animate__animated', animation);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            animateElements.forEach(element => {
+                observer.observe(element);
+            });
+            
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+            
+            // Navbar background change on scroll
+            window.addEventListener('scroll', function() {
+                const navbar = document.querySelector('.navbar');
+                if (window.scrollY > 50) {
+                    navbar.classList.add('navbar-scrolled');
+                    navbar.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.3)';
+                } else {
+                    navbar.classList.remove('navbar-scrolled');
+                    navbar.style.boxShadow = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
